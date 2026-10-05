@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#07090f">
+  <meta name="description" content="KHAS MALAYSIA EDITION - A cinematic mini quiz experience.">
+  <title>KHAS MALAYSIA EDITION</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="app">
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div id="particles"></div>
+    <div class="vignette"></div>
+
+
+    <!-- ================= MAIN MENU ================= -->
+    <main id="menuScreen" class="screen active">
+
+      <section class="menu-content">
+
+        <div class="title-block">
+          <p class="eyebrow">AKEEMZ PRESENTS</p>
+
+          <h1 class="game-title">
+            <span>KHAS</span>
+            <strong>MALAYSIA EDITION</strong>
+          </h1>
+
+          <p class="subtitle">A MINI QUIZ EXPERIENCE</p>
+        </div>
+
+        <div class="menu-buttons">
+
+          <button id="startBtn" class="menu-btn primary" type="button">
+            <span>START QUIZ</span>
+          </button>
+
+          <button id="howBtn" class="menu-btn" type="button">
+            <span>HOW TO PLAY</span>
+          </button>
+
+          <button id="aboutBtn" class="menu-btn" type="button">
+            <span>ABOUT</span>
+          </button>
+
+          <button id="editorBtn" class="menu-btn editor-menu-btn" type="button">
+            <span>EDITOR</span>
+          </button>
+
+        </div>
+
+        <div class="best-score-box">
+          <span>BEST SCORE</span>
+          <strong id="menuBestScore">----</strong>
+        </div>
+
+        <footer class="menu-footer">
+          <strong>AKEEMZ</strong>
+          <span>© 2026</span>
+        </footer>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= HOW TO PLAY ================= -->
+    <main id="howScreen" class="screen panel-screen">
+
+      <section class="info-panel">
+
+        <p class="eyebrow">GAME GUIDE</p>
+
+        <h2>HOW TO PLAY</h2>
+
+        <p class="panel-intro">
+          WELCOME TO KHAS MALAYSIA EDITION
+        </p>
+
+        <p>
+          Answer each question before the timer runs out.
+        </p>
+
+        <div class="info-section">
+          <h3>SCORING</h3>
+
+          <div class="score-rule">
+            <span>✓ CORRECT</span>
+            <strong>+100 POINTS</strong>
+          </div>
+
+          <div class="score-rule">
+            <span>✕ INCORRECT</span>
+            <strong>-20 POINTS</strong>
+          </div>
+
+          <div class="score-rule">
+            <span>⌛ TIME'S UP</span>
+            <strong>-30 POINTS</strong>
+          </div>
+
+          <p>Your score can go below zero.</p>
+        </div>
+
+        <div class="info-section">
+          <h3>HOW IT WORKS</h3>
+
+          <ol>
+            <li>Read the question.</li>
+            <li>Choose your answer.</li>
+            <li>Your answer will be locked.</li>
+            <li>Wait for the timer to finish.</li>
+            <li>Your answer will then be revealed.</li>
+            <li>Continue to the next question.</li>
+            <li>Try to achieve your highest score.</li>
+          </ol>
+        </div>
+
+        <p class="good-luck">GOOD LUCK.</p>
+
+        <button id="howBackBtn" class="menu-btn" type="button">
+          BACK
+        </button>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= ABOUT ================= -->
+    <main id="aboutScreen" class="screen panel-screen">
+
+      <section class="info-panel about-panel">
+
+        <p class="eyebrow">ABOUT THE GAME</p>
+
+        <h2>ABOUT</h2>
+
+        <div class="about-logo">
+          KHAS
+          <span>MALAYSIA EDITION</span>
+        </div>
+
+        <div class="about-section">
+          <h3>A MINI QUIZ EXPERIENCE</h3>
+
+          <p>
+            Test your knowledge.<br>
+            Challenge yourself.<br>
+            Beat your best score.
+          </p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="about-section">
+          <h3>CREATED BY</h3>
+          <strong>AKEEMZ</strong>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="about-section">
+          <h3>BUILT WITH</h3>
+          <p>HTML<br>CSS<br>JAVASCRIPT</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="about-section">
+          <h3>VERSION</h3>
+          <strong>2.0</strong>
+        </div>
+
+        <div class="divider"></div>
+
+        <p>© 2026 AKEEMZ</p>
+
+        <button id="aboutBackBtn" class="menu-btn" type="button">
+          BACK
+        </button>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= EDITOR LOGIN ================= -->
+    <main id="editorLoginScreen" class="screen panel-screen">
+
+      <section class="info-panel editor-login-panel">
+
+        <p class="eyebrow">SYSTEM ACCESS</p>
+
+        <h2>EDITOR</h2>
+
+        <p class="panel-intro">
+          ENTER EDITOR PASSWORD
+        </p>
+
+        <form id="editorLoginForm" class="editor-login-form">
+
+          <input
+            id="editorPassword"
+            class="editor-password"
+            type="password"
+            autocomplete="off"
+            placeholder="PASSWORD"
+            aria-label="Editor password"
+          >
+
+          <p id="editorLoginMessage" class="editor-login-message"></p>
+
+          <button class="menu-btn primary" type="submit">
+            ENTER EDITOR
+          </button>
+
+          <button id="editorLoginBackBtn" class="menu-btn" type="button">
+            BACK
+          </button>
+
+        </form>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= EDITOR ================= -->
+    <main id="editorScreen" class="screen panel-screen">
+
+      <section class="info-panel editor-panel">
+
+        <p class="eyebrow">DEVELOPER ACCESS</p>
+
+        <h2>EDITOR MODE</h2>
+
+        <p class="panel-intro">
+          AUDIO & GAME TESTING
+        </p>
+
+        <div class="editor-status">
+          <span>STATUS</span>
+          <strong>EDITOR ACCESS GRANTED</strong>
+        </div>
+
+
+        <div class="info-section">
+          <h3>AUDIO TEST</h3>
+
+          <div class="editor-grid">
+
+            <button id="testClickBtn" class="menu-btn" type="button">
+              CLICK SFX
+            </button>
+
+            <button id="testCorrectBtn" class="menu-btn" type="button">
+              CORRECT SFX
+            </button>
+
+            <button id="testWrongBtn" class="menu-btn" type="button">
+              WRONG SFX
+            </button>
+
+            <button id="testWarningBtn" class="menu-btn" type="button">
+              WARNING SFX
+            </button>
+
+            <button id="testTimeoutBtn" class="menu-btn" type="button">
+              TIME UP SFX
+            </button>
+
+            <button id="testMenuMusicBtn" class="menu-btn" type="button">
+              MENU MUSIC
+            </button>
+
+            <button id="testEndingMusicBtn" class="menu-btn" type="button">
+              ENDING MUSIC
+            </button>
+
+            <button id="stopAudioBtn" class="menu-btn" type="button">
+              STOP AUDIO
+            </button>
+
+          </div>
+        </div>
+
+
+        <div class="info-section">
+          <h3>GAME TEST</h3>
+
+          <div class="editor-grid">
+
+            <button id="editorQuizBtn" class="menu-btn primary" type="button">
+              TEST QUIZ
+            </button>
+
+            <button id="editorResultBtn" class="menu-btn" type="button">
+              TEST RESULT
+            </button>
+
+            <button id="editorCreditsBtn" class="menu-btn" type="button">
+              TEST CREDITS
+            </button>
+
+          </div>
+        </div>
+
+
+        <div class="info-section">
+          <h3>EDITOR CONTROLS</h3>
+
+          <p>
+            Editor mode allows you to skip questions,
+            bypass the timer and test the complete game flow.
+          </p>
+        </div>
+
+        <button id="editorBackBtn" class="menu-btn" type="button">
+          EXIT EDITOR
+        </button>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= QUIZ ================= -->
+    <main id="quizScreen" class="screen quiz-screen">
+
+      <section class="quiz-container">
+
+        <header class="quiz-header">
+
+          <div class="question-counter">
+            QUESTION
+            <strong>
+              <span id="currentQuestion">01</span>
+              /
+              <span id="totalQuestions">15</span>
+            </strong>
+          </div>
+
+          <div class="score-display">
+            SCORE
+            <strong id="liveScore">0</strong>
+          </div>
+
+        </header>
+
+
+        <div class="progress-track">
+          <div id="progressBar" class="progress-bar"></div>
+        </div>
+
+
+        <div class="timer-area">
+
+          <div class="timer-ring">
+
+            <svg viewBox="0 0 100 100">
+
+              <circle
+                class="timer-bg"
+                cx="50"
+                cy="50"
+                r="44">
+              </circle>
+
+              <circle
+                id="timerCircle"
+                class="timer-progress"
+                cx="50"
+                cy="50"
+                r="44">
+              </circle>
+
+            </svg>
+
+            <div class="timer-number">
+              <span id="timerText">10</span>
+              <small>SEC</small>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <article class="question-card">
+
+          <span id="difficultyLabel" class="difficulty">
+            EASY
+          </span>
+
+          <h2 id="questionText">
+            Loading question...
+          </h2>
+
+        </article>
+
+
+        <div id="answersContainer" class="answers-container"></div>
+
+
+        <div id="answerFeedback" class="answer-feedback" aria-live="polite">
+
+          <div id="feedbackIcon"></div>
+
+          <strong id="feedbackTitle"></strong>
+
+          <span id="feedbackPoints"></span>
+
+        </div>
+
+
+        <!-- EDITOR ONLY -->
+        <div id="editorQuizControls" class="editor-quiz-controls">
+
+          <span>EDITOR MODE</span>
+
+          <div>
+
+            <button id="editorSkipBtn" type="button">
+              SKIP QUESTION
+            </button>
+
+            <button id="editorTimerBtn" type="button">
+              SKIP TIMER
+            </button>
+
+            <button id="editorQuizExitBtn" type="button">
+              EXIT EDITOR
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= RESULT ================= -->
+    <main id="resultScreen" class="screen result-screen">
+
+      <section class="result-container">
+
+        <p class="eyebrow result-eyebrow">
+          QUIZ COMPLETE
+        </p>
+
+        <h2>FINAL SCORE</h2>
+
+        <div class="final-score">
+
+          <span id="finalScore">0</span>
+
+          <small>POINTS</small>
+
+        </div>
+
+
+        <div id="rankReveal" class="rank-reveal">
+
+          <span>RANK</span>
+
+          <strong id="rankText">
+            ROOKIE
+          </strong>
+
+        </div>
+
+
+        <div id="statsPanel" class="stats-panel">
+
+          <div class="stat">
+
+            <span>QUESTIONS</span>
+
+            <strong id="resultQuestions">
+              15
+            </strong>
+
+          </div>
+
+          <div class="stat">
+
+            <span>CORRECT</span>
+
+            <strong id="resultCorrect">
+              0
+            </strong>
+
+          </div>
+
+          <div class="stat">
+
+            <span>INCORRECT</span>
+
+            <strong id="resultIncorrect">
+              0
+            </strong>
+
+          </div>
+
+          <div class="stat">
+
+            <span>TIME'S UP</span>
+
+            <strong id="resultTimeout">
+              0
+            </strong>
+
+          </div>
+
+          <div class="stat">
+
+            <span>ACCURACY</span>
+
+            <strong id="resultAccuracy">
+              0%
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="breakdown">
+
+          <h3>POINT BREAKDOWN</h3>
+
+          <div>
+
+            <span>CORRECT ANSWERS</span>
+
+            <strong id="breakdownCorrect">
+              +0
+            </strong>
+
+          </div>
+
+          <div>
+
+            <span>INCORRECT ANSWERS</span>
+
+            <strong id="breakdownIncorrect">
+              -0
+            </strong>
+
+          </div>
+
+          <div>
+
+            <span>TIME'S UP</span>
+
+            <strong id="breakdownTimeout">
+              -0
+            </strong>
+
+          </div>
+
+          <div class="breakdown-total">
+
+            <span>FINAL SCORE</span>
+
+            <strong id="breakdownTotal">
+              0
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div id="bestScoreResult" class="best-score-result">
+
+          <span>BEST SCORE</span>
+
+          <strong id="resultBestScore">
+            0000
+          </strong>
+
+          <p id="newBestMessage"></p>
+
+        </div>
+
+
+        <div class="performance">
+
+          <span>PERFORMANCE</span>
+
+          <div class="performance-track">
+
+            <div id="performanceBar"></div>
+
+          </div>
+
+          <strong id="performanceMessage">
+            GOOD JOB
+          </strong>
+
+        </div>
+
+
+        <!-- EDITOR TEST ONLY -->
+        <button
+          id="resultBackToEditorBtn"
+          class="menu-btn editor-return-btn"
+          type="button"
+        >
+          BACK TO EDITOR
+        </button>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= ENDING CREDITS ================= -->
+    <main id="creditsScreen" class="screen credits-screen">
+
+      <div class="credits-fade"></div>
+
+      <section id="creditsContent" class="credits-content">
+
+        <div class="credit-block">
+
+          <h1>
+            KHAS<br>
+            MALAYSIA EDITION
+          </h1>
+
+          <p>
+            A MINI QUIZ EXPERIENCE
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>CREATED BY</span>
+
+          <h2>AKEEMZ</h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>DESIGNED & DEVELOPED BY</span>
+
+          <h2>AKEEMZ</h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>PROGRAMMING</span>
+
+          <p>
+            HTML • CSS • JAVASCRIPT
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>GAME DESIGN</span>
+
+          <h2>AKEEMZ</h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>UI & ANIMATION</span>
+
+          <h2>AKEEMZ</h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>AUDIO & SOUND</span>
+
+          <p>
+            MUSIC • SOUND EFFECTS
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>SPECIAL THANKS</span>
+
+          <p>
+            TO EVERYONE<br>
+            WHO TOOK THE TIME<br>
+            TO PLAY THIS GAME
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <p>
+            TO EVERYONE<br>
+            WHO SUPPORTED<br>
+            THIS LITTLE PROJECT
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <span>AND TO YOU...</span>
+
+          <h2>
+            THANK YOU<br>
+            FOR PLAYING.
+          </h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <h2>
+            THANK YOU<br>
+            FOR STAYING<br>
+            UNTIL THE END.
+          </h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <h2>
+            SEE YOU<br>
+            NEXT TIME.
+          </h2>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <h1>
+            KHAS<br>
+            MALAYSIA EDITION
+          </h1>
+
+          <p>
+            CREATED WITH<br>
+            HTML • CSS • JAVASCRIPT
+          </p>
+
+        </div>
+
+
+        <div class="credit-block">
+
+          <p>
+            © 2026 AKEEMZ
+          </p>
+
+        </div>
+
+
+        <div id="theEnd" class="the-end">
+          T H E&nbsp;&nbsp; E N D
+        </div>
+
+
+        <!-- EDITOR TEST ONLY -->
+        <button
+          id="creditsBackToEditorBtn"
+          class="menu-btn editor-return-btn"
+          type="button"
+        >
+          BACK TO EDITOR
+        </button>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="game.js"></script>
+
+</body>
+</html>
